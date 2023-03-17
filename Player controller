@@ -16,7 +16,7 @@ public class PlayerContrller : MonoBehaviour
     private bool IsAtack;
     public GameObject hitBoxPrefab;
     public Transform mao;
-    private GameController gameController;
+    private GameController _gameController;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +24,9 @@ public class PlayerContrller : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
 
-        gameController = FindObjectOfType(typeof(GameController)) as GameController;
+        _gameController = FindObjectOfType(typeof(GameController)) as GameController;
 
-        gameController.PlayerTransform = this.transform;
+        _gameController.PlayerTransform = this.transform;
     }
 
     // Update is called once per frame
